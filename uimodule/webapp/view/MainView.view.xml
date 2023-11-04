@@ -1,0 +1,36 @@
+<mvc:View controllerName="sap.ui.demo.mockserver.controller.MainView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <headerContent>
+            <Button type="Emphasized" press=".onPress" text="{i18n>loadFirstItem}"></Button>
+        </headerContent>
+
+        <List id="idList" items="{/FindUpcomingMeetups}" noDataText="{i18n>noDataText}">
+            <items>
+                <ObjectListItem 
+                   number="{
+                    path: 'EventDate',
+                    type: 'sap.ui.model.type.DateTime',
+                    formatOptions: {
+                        style: 'medium'
+                    }
+                   }"
+
+                   title="{Title}">
+                   <attributes>
+                    <ObjectAttribute text="{Description}"></ObjectAttribute>
+                   </attributes>
+                
+                </ObjectListItem>
+            </items>
+
+        </List>
+            
+ 
+
+
+        
+        
+    </Page>
+</mvc:View>
